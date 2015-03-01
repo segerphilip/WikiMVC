@@ -1,0 +1,20 @@
+{
+  "name": "WikiMVC",
+  "version": "0.0.0",
+  "homepage": "https://github.com/segerphilip/WikiMVC",
+  "authors": [
+    "marenar <marena.richardson@students.olin.edu>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "ember": "~1.10.0",
+    "ember-data": "~0.0.14"
+  }
+}
