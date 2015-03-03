@@ -11,6 +11,6 @@ App.ApplicationSerializer = DS.RESTSerializer.extend({
 });
 
 App.ApplicationAdapter = DS.RESTAdapter.extend({
-	host: 'https://agile-bastion-9729.herokuapp.com/',
+	host: 'https://wikipipia-marenica.herokuapp.com/',
 	namespace: 'api'
 });
