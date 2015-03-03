@@ -1,21 +1,16 @@
 window.App = Ember.Application.create({
-	LOG_TRANSITIONS: true
+	LOG_TRANSITIONS: true,
+	LOG_TRANSITIONS_INTERNAL: true
 })
 
-App.ApplicationAdapter = DS.FixtureAdapter.extend();
-
-App.RESTAdapter = DS.RESTAdapter.extend({
-    url: 'http://localhost:3000',
-    namespace: 'api',
-
-    serializer: DS.RESTSerializer.extend({
-        primaryKey: function(type) {
-            return '_id';
-        }
-    })
+App.ApplicationSerializer = DS.RESTSerializer.extend({
+	primaryKey: '_id',
+	serializeId: function(id) {
+		return id.toString();
+	}
 });
 
-App.Store = DS.Store.extend({
-    revision: 12,
-    adapter: App.RESTAdapter
+App.ApplicationAdapter = DS.RESTAdapter.extend({
+	host: 'http://localhost:3000',
+	namespace: 'api'
 });

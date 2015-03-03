@@ -1,0 +1,4 @@
+<h1>Welcome to Wikipipia Marenica!</h1>
+{{#each page in model}}
+	<li>{{page.title}}</li>
+{{/each}}
