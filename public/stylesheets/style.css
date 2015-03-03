@@ -42,6 +42,18 @@ a:visited {
   color: #2F5196;
   margin: 15px;
 }
+.form-group {
+  margin: 15px 0;
+  color: #ECF0F1;
+  font-size: 18px;
+  font-style: italic;
+  text-align: left;
+  width: 40%;
+  height: 40%;
+  outline: none;
+  border-radius: 3px;
+  border-color: transparent;
+}
 div#nav {
   color: #444444;
   text-align: center;
