@@ -5,6 +5,8 @@ var Edit = wiki.edit;
 
 var api = {};
 
-api.createPage = function (req, res) {};
+api.getPage = function (req, res) {
+	console.log(req.params);
+};
 
 module.exports = api;
