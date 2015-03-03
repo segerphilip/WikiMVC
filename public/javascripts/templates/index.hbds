@@ -1,4 +1,4 @@
 <h1>Welcome to Wikipipia Marenica!</h1>
 {{#each page in model}}
-	<li>{{page.title}}</li>
+	<li>{{#link-to 'page.show' page}}{{page.title}}{{/link-to}}</li>
 {{/each}}
