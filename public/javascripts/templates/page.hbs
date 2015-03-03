@@ -1,0 +1,39 @@
+<div class="bs-docs-section">
+<div class="row">
+<div class="col-lg-l2">
+	<div class="bs-component">
+		<div class="jumbotron">
+			<h1>{{model.title}}</h1>
+			<p>{{model.content}}</p>
+			<br>
+		</div>
+	</div>
+</div>
+</div>
+{{outlet}}
+</div>
+
+<script type='text/x-handlebars' data-template-name='page/index'>
+	<p>{{#link-to 'page.edit' model classNames="btn btn-lg btn-primary editButton"}}Edit this page{{/link-to}}</p>
+</script>
+
+<script type='text/x-handlebars' data-template-name='page/edit'>
+	<div class="row">
+	<div class="col-lg-4">
+		<h2 id="editTitle">Type new text here...</h2>
+		<br>
+		<form class="bs-component" {{action "save" on=submit}}>
+			<div class="form-group">
+				<label class="control-label">Title</label>
+				{{input value=model.title class="form-control"}}
+			</div>
+			<div class="form-group">
+				<label class="control-label">Content</label>
+				{{textarea value=model.content spellcheck=true class="form-control"}}
+			</div>
+			<button type="submit" class="btn btn-lg btn-primary">Submit</button>
+		</form>
+	</div>
+	</div>
+</script>
+
