@@ -2,11 +2,8 @@
 // https://github.com/bulkan/node-ember-boilerplate/blob/master/frontend/index.html
 
 templates = [
-  'index.hbs',
-  'page.hbs',
-  'new.hbs',
-  'error.hbs',
-  'search.hbs'
+  'index.hbds',
+  'page.hdbs'
 ]
 
 /*

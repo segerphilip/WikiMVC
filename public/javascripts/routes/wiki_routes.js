@@ -1,10 +1,5 @@
 App.Router.map(function() {
-	this.resource('page', {path: '/pages/:page_id'}, function() {
-		this.route('edit', {path: '/:page_id/edit'});
-	});
-	this.route('new', {path: '/pages/new'});
-	this.resource('error', {path: '/error/:error'});
-	this.route('search', {path: '/search/:title'});
+	this.resource('index', {path: '/'});
 });
 
 App.IndexRoute = Ember.Route.extend({
@@ -13,31 +8,17 @@ App.IndexRoute = Ember.Route.extend({
 	}
 });
 
-App.PageRoute = Ember.Route.extend({
+App.Router.map(function() {
+	this.resource('page', {path: '/page'}, function() {
+		this.route('show', {path: '/:page_id'})
+		this.route('edit', {path: '/edit/:page_id'});
+		this.route('new', {path: '/new/:page_id'});
+	});
+});
+
+App.PageShowRoute = Ember.Route.extend({
 	model: function(params) {
+		console.log(params);
 		return this.store.find('page', params.page_id);
 	}
 });
-
-App.NewRoute = Ember.Route.extend({
-	model: function() {
-		return Em.Object.create({})
-	},
-	renderTemplate: function(){
-		this.render('new', {
-			controller: 'New'
-		});
-	}
-});
-
-App.PageEditRoute = Ember.Route.extend({
-	model: function(params) {
-		return this.store.find('page', params.page_id);
-	}
-});
-
-App.SearchRoute = Ember.Route.extend({
-	model: function(params) {
-		return this.store.find('page', {title: params.title});
-	}
-})

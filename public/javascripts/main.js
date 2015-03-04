@@ -11,6 +11,6 @@ App.ApplicationSerializer = DS.RESTSerializer.extend({
 });
 
 App.ApplicationAdapter = DS.RESTAdapter.extend({
-	host: 'https://wikipipia-marenica.herokuapp.com/',
+	host: 'http://localhost:3000',
 	namespace: 'api'
 });
