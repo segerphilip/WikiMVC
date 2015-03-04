@@ -1,8 +1,0 @@
-<div id="main">
-{{outlet}}
-</div>
-
-<script type='text/x-handlebars' data-template-name="page/show">
-	<h2>{{model.title}}</h2>
-	<p>{{model.content}}</p>
-</script>

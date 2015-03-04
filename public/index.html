@@ -2,15 +2,35 @@
 <html>
 	<head>
 		<meta charset='utf-8'>
-		<title>Wikipipia Marenica</title>
-		<link rel='stylesheet' href='stylesheets/style.css'>
+		<title>Our Wiki!</title>
+		<link rel='stylesheet' href='stylesheets/bootstrap.min.css'>
 	</head>
 	<body>
-		<div id="nav">
-			<h1>Wikipipia Marenica</h1>
-			<a href="/">Home</a>
-			<a href="$">Random</a>
-		</div>
+		<script type="text/x-handlebars" data-template-name="application">
+			<div class="bs-component">
+			<nav class="navbar navbar-default">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<img style="max-width:40px; margin-right: 10px; margin-top: 3px; float: left;" src="images/coffee.png">
+					{{#link-to 'index' classNames="navbar-brand"}}
+					Wikipipia Marenica{{/link-to}}
+				</div>
+				<div class="collapse navbar-collapse">
+					<ul class="nav navbar-nav">
+						<li>{{#link-to 'new'}}Contribute{{/link-to}}</li>
+					</ul>
+					<form class="navbar-form navbar-left" {{action "search" on=submit}}role="search">
+						<div class="form-group">
+							{{input value=title class="form-control" placeholder="Search"}}
+						</div>
+						<button type="submit" id="searchButton" style="text-align: margin-right;" class="btn btn-default">Submit</button>
+					</form>
+				</div>
+			</div>
+			</nav>
+			</div>
+			<div class="container">{{outlet 'main'}}</div>
+		</script>
 	</body>
 	<footer>
 		<p>&copy; Wikipipia Marenica, 2015</p>
@@ -25,3 +45,4 @@
 	<script src="javascripts/controllers/wiki_controllers.js"></script>
 	<script src="javascripts/templates.js"></script>
 </html>
+
